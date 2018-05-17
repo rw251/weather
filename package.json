@@ -9,7 +9,7 @@
     "build:dev": "brunch build",
     "test": "standard",
     "predeploy": "npm run build",
-    "deploy": "rsync -az --force --delete --progress -e 'ssh' ./public/ rw251.com:~/public_html/weather--exclude=/.ssh --exclude=/.logs --exclude=/.cagefs --exclude=/.cl.selector --exclude=/.bash_history"
+    "deploy": "rsync -az --force --delete --progress -e 'ssh' ./public/ rw251.com:~/public_html/weather --exclude=/.ssh --exclude=/.logs --exclude=/.cagefs --exclude=/.cl.selector --exclude=/.bash_history"
   },
   "keywords": [],
   "author": "",
