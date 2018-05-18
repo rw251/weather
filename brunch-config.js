@@ -18,7 +18,7 @@ module.exports = {
     },
   },
 
-  server: { command: 'php -S 0.0.0.0:8080 -t public -c php.ini' },
+  server: { command: 'php -S 0.0.0.0:8180 -t public -c php.ini' },
 
   plugins: {
     autoReload: {

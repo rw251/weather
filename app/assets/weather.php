@@ -18,5 +18,4 @@ if(!isset($_SESSION["p".$place])) {
 
 header('Content-Type: application/json');
 echo $_SESSION["p".$place];
-
 ?>

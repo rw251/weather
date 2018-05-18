@@ -1,4 +1,5 @@
 const $ = require('jquery');
+const forecastItemTmpl = require('../templates/forecast-item.jade');
 
 const weatherTypes = {
   0: 'Clear night',
@@ -35,11 +36,24 @@ const weatherTypes = {
 };
 
 const processForecast = (forecast) => {
+  const html = [];
   forecast.Location.Period.forEach((day) => {
     day.Rep.forEach((period) => {
+      html.push(forecastItemTmpl({
+        date: day.value.substr(0, 10),
+        time: `${period.$ / 60}:00`,
+        weatherType: weatherTypes[period.W],
+        feelsLike: period.F,
+        temperature: period.T,
+        uv: period.U,
+        windSpeed: period.S,
+        windDirection: period.D.toLowerCase(),
+        probabilityRain: period.Pp,
+      }));
       console.log(`${day.value} - ${period.$ / 60}:00 ${weatherTypes[period.W]} ${period.T}℃(${period.F}℃) UV(${period.U}) ${period.S}${period.D} rain:${period.Pp}%`);
     });
   });
+  $('#content').html(html.join(''));
 };
 
 module.exports = {

@@ -1,0 +1,9 @@
+.forecast-item.mdl-cell.mdl-cell--12-col
+  span.date= date
+  span.time= time
+  span.weatherType= weatherType
+  span= feelsLike + '(' + temperature + ')'
+  span= 'UV(' + uv + ')'
+  span= windSpeed
+  span.wind-direction(class=windDirection) →
+  span= 'rain:' + probabilityRain
