@@ -81,54 +81,182 @@
   width: 40px;
 }
 .forecast-item .weatherType {
-  width: 130px;
+  width: 30px;
 }
 
 .e {
-  transform: rotate(0deg);
-}
-.ese {
-  transform: rotate(22.5deg);
-}
-.se {
-  transform: rotate(45deg);
-}
-.sse {
-  transform: rotate(67.5deg);
-}
-.s {
-  transform: rotate(90deg);
-}
-.ssw {
-  transform: rotate(112.5deg);
-}
-.sw {
-  transform: rotate(135deg);
-}
-.wsw {
-  transform: rotate(157.5deg);
-}
-.w {
   transform: rotate(180deg);
 }
-.wnw {
+.ese {
   transform: rotate(202.5deg);
 }
-.nw {
+.se {
   transform: rotate(225deg);
 }
-.nnw {
+.sse {
   transform: rotate(247.5deg);
 }
-.n {
+.s {
   transform: rotate(270deg);
 }
-.nne {
+.ssw {
   transform: rotate(292.5deg);
 }
-.ne {
+.sw {
   transform: rotate(315deg);
 }
-.ene {
+.wsw {
   transform: rotate(337.5deg);
+}
+.w {
+  transform: rotate(0deg);
+}
+.wnw {
+  transform: rotate(22.5deg);
+}
+.nw {
+  transform: rotate(45deg);
+}
+.nnw {
+  transform: rotate(67.5deg);
+}
+.n {
+  transform: rotate(90deg);
+}
+.nne {
+  transform: rotate(112.5deg);
+}
+.ne {
+  transform: rotate(135deg);
+}
+.ene {
+  transform: rotate(157.5deg);
+}
+
+.weather-icon {
+  width: 40px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: -8px 0 0 0;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+
+.day-clear {
+  background: none, url(./images/day.svg) no-repeat;
+}
+
+.night-clear {
+  background: none, url(./images/night.svg) no-repeat;
+}
+
+.day-partly-cloudy {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+
+.night-partly-cloudy {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+
+.mist {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+
+.fog {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+
+.cloudy {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+
+.overcast {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+
+.day-shower {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+
+.night-shower {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+
+.day-heavy-shower {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+
+.night-heavy-shower {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+
+.day-hail-shower {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+
+.night-hail-shower {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+
+.day-sleet-shower {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+
+.night-sleet-shower {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+
+.day-light-snow-shower {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+
+.night-light-snow-shower {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+
+.day-heavy-snow-shower {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+
+.night-heavy-snow-shower {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+
+.day-thunder-shower {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+
+.night-thunder-shower {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+.drizzle {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+.light-rain {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+.heavy-rain {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+.sleet {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+.hail {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+.light-snow {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+.heavy-snow {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+.thunder {
+  background: none, url(./images/weather.svg) no-repeat;
+}
+
+.weather-icon {
+  background-size: contain;
 }

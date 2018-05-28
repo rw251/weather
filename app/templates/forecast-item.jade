@@ -1,7 +1,8 @@
 .forecast-item.mdl-cell.mdl-cell--12-col
   span.date= date
   span.time= time
-  span.weatherType= weatherType
+  span.weatherType
+    i.weather-icon(class=weatherIcon, title=weatherType)
   span= feelsLike + '(' + temperature + ')'
   span= 'UV(' + uv + ')'
   span= windSpeed
