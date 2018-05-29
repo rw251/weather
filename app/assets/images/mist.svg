@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Original work by Richard Williams  -->
+<svg
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="30"
+    height="30"
+    viewbox="0 0 30 30">
+	<g class="mist-line-1">	
+		<path stroke="#A0A0A0" fill="none" d="M 2, 8 C 10, 0, 20, 16, 28, 8"/>
+	</g>
+	<g class="mist-line-2">	
+		<path stroke="#A0A0A0" fill="none" d="M 2, 15 C 10, 7, 20, 23, 28, 15"/>
+	</g>
+	<g class="mist-line-3">	
+		<path stroke="#A0A0A0" fill="none" d="M 2, 22 C 10, 14, 20, 30, 28, 22"/>
+	</g>
+</svg>
