@@ -1,43 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Modified by Richard Williams - base on: -->
-<!-- (c) ammap.com | SVG weather icons -->
-<svg
-    version="1.1"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    width="30"
-    height="30"
-    viewbox="0 0 30 30">
-    <g id="day">
-        <g transform="translate(15,15)">
-            <g class="am-weather-sun am-weather-sun-shiny am-weather-easing-ease-in-out">
-                <g>
-                    <line fill="none" stroke="orange" stroke-linecap="round" stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0" y2="3" />
-                </g>
-                <g transform="rotate(45)">
-                    <line fill="none" stroke="orange" stroke-linecap="round" stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0" y2="3" />
-                </g>
-                <g transform="rotate(90)">
-                    <line fill="none" stroke="orange" stroke-linecap="round" stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0" y2="3" />
-                </g>
-                <g transform="rotate(135)">
-                    <line fill="none" stroke="orange" stroke-linecap="round" stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0" y2="3" />
-                </g>
-                <g transform="rotate(180)">
-                    <line fill="none" stroke="orange" stroke-linecap="round" stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0" y2="3" />
-                </g>
-                <g transform="rotate(225)">
-                    <line fill="none" stroke="orange" stroke-linecap="round" stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0" y2="3" />
-                </g>
-                <g transform="rotate(270)">
-                    <line fill="none" stroke="orange" stroke-linecap="round" stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0" y2="3" />
-                </g>
-                <g transform="rotate(315)">
-                    <line fill="none" stroke="orange" stroke-linecap="round" stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0" y2="3" />
-                </g>
-            </g>
-            <circle cx="0" cy="0" fill="orange" r="5" stroke="orange" stroke-width="2"/>
-        </g>
-    </g>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150" height="150" viewBox="0 0 150 150">
+	<title>Light rain showers</title>
+
+    <!-- sun -->
+    <g xmlns="http://www.w3.org/2000/svg" style="stroke-width:7;stroke:orange">
+        <line x1="2" y1="75" x2="16" y2="75" transform="rotate(-20, 75, 75)"/>
+        <line x1="2" y1="75" x2="16" y2="75" transform="rotate(4, 75, 75)"/>
+        <line x1="2" y1="75" x2="16" y2="75" transform="rotate(28, 75, 75)"/>
+        <line x1="2" y1="75" x2="16" y2="75" transform="rotate(52, 75, 75)"/>
+        <line x1="2" y1="75" x2="16" y2="75" transform="rotate(76, 75, 75)"/>
+        <line x1="2" y1="75" x2="16" y2="75" transform="rotate(100, 75, 75)"/>
+        <line x1="2" y1="75" x2="16" y2="75" transform="rotate(124, 75, 75)"/>
+        <line x1="2" y1="75" x2="16" y2="75" transform="rotate(148, 75, 75)"/>
+        <line x1="2" y1="75" x2="16" y2="75" transform="rotate(172, 75, 75)"/>
+        <line x1="2" y1="75" x2="16" y2="75" transform="rotate(196, 75, 75)"/>
+        <line x1="2" y1="75" x2="16" y2="75" transform="rotate(220, 75, 75)"/>
+        <line x1="2" y1="75" x2="16" y2="75" transform="rotate(244, 75, 75)"/>
+        <line x1="2" y1="75" x2="16" y2="75" transform="rotate(268, 75, 75)"/>
+        <line x1="2" y1="75" x2="16" y2="75" transform="rotate(292, 75, 75)"/>
+        <line x1="2" y1="75" x2="16" y2="75" transform="rotate(316, 75, 75)"/>
+        <circle cx="75" cy="75" r="50" fill="orange"/>
+  	</g>
+
 </svg>
- 
