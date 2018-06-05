@@ -15,8 +15,10 @@
         <circle cx="75" cy="75" r="36" fill="orange"/>
   	</g>
     
-    <!-- cloud - with hole for rain drop -->
- 	<g stroke="#666" stroke-width="12" stroke-linecap="round" fill="none" transform="translate(-25,-10),scale(1.2)">
+    
+    
+    <!-- cloud -->
+ 	<g stroke="#666" stroke-width="4" stroke-linecap="round" fill="none" transform="translate(-25,-10),scale(1.2)">
     	<!-- cloud mask -->
         <rect x="30" y="70" width="100" height="60" fill="white" stroke="none" />
         <rect x="70" y="40" width="40" height="36" fill="white" stroke="none" />
