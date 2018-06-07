@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150" height="150" viewBox="0 0 150 150">
+	<title>Overcast</title> 
+
+    <!-- cloud -->
+ 	<g stroke="#555" stroke-width="4" stroke-linecap="round" fill="#555" transform="translate(-39,-27),scale(1.35)">
+
+        <rect x="65" y="64" width="55" height="44" stroke="none"/>
+
+    	<path d="M 75 75 A 23 23, 0, 1, 0 55,110 L 110,110"/>
+        <path d="M 110,110 115,110 A 21 21, 0, 1, 0 115,65"/>        
+        <path d="M 105 80 A 25 25, 0, 1, 0 65,65"/>
+  	</g>
+
+</svg>

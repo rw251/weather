@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150" height="150" viewBox="0 0 150 150">
-	<title>Night - partly cloudy</title>
+	<title>Cloudy</title> 
 
-    <!-- moon -->
-    <g stroke-width="10" stroke="#666" stroke-linecap="round" fill="none" transform="translate(0,0),scale(0.8),rotate(20,75,75)">
-        <path d="M75 5 A70 70 0 1 0 145 105" />
-        <path d="M75 5 A62 62 0 0 0 145 105" />
-    </g>
-    
+    <rect x="0" y="0" width="150" height="150" fill="none" stroke="black" />
+
     <!-- cloud -->
- 	<g stroke="#666" stroke-width="4" stroke-linecap="round" fill="white" transform="translate(-25,-10),scale(1.2)">
-    	<!-- cloud mask -->
+ 	<g stroke="#666" stroke-width="4" stroke-linecap="round" fill="white" transform="translate(-39,-27),scale(1.35)">
+
         <rect x="70" y="68" width="50" height="40" stroke="none"/>
-        
+
     	<path d="M 75 75 A 23 23, 0, 1, 0 55,110 L 110,110"/>
         <path d="M 110,110 115,110 A 21 21, 0, 1, 0 115,65"/>        
         <path d="M 105 80 A 25 25, 0, 1, 0 65,65"/>
