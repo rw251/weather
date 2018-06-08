@@ -35,7 +35,7 @@ const weatherTypes = {
   30: { description: 'Thunder', icon: 'thunder' },
 };
 
-const processForecast = (forecast) => {
+const processForecast = (forecast, placeId) => {
   const html = [];
   let inc = 0;
   forecast.Location.Period.forEach((day) => {
@@ -43,10 +43,8 @@ const processForecast = (forecast) => {
       html.push(forecastItemTmpl({
         date: day.value.substr(0, 10),
         time: `${period.$ / 60}:00`,
-        // weatherType: weatherTypes[period.W].description,
-        weatherType: weatherTypes[inc].description,
-        // weatherIcon: weatherTypes[period.W].icon,
-        weatherIcon: weatherTypes[inc].icon,
+        weatherType: weatherTypes[placeId > 0 ? period.W : inc].description,
+        weatherIcon: weatherTypes[placeId > 0 ? period.W : inc].icon,
         feelsLike: period.F,
         temperature: period.T,
         uv: period.U,
@@ -65,8 +63,7 @@ module.exports = {
     $
       .getJSON(`weather.php?place=${placeId}`)
       .done((data) => {
-        console.log(data.SiteRep.Wx);
-        processForecast(data.SiteRep.DV);
+        processForecast(data.SiteRep.DV, placeId);
       })
       .fail((a, b, c) => {
         console.log(a, b, c);
