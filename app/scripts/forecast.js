@@ -35,13 +35,18 @@ const weatherTypes = {
   30: { description: 'Thunder', icon: 'thunder' },
 };
 
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
 const processForecast = (forecast, placeId) => {
   const html = [];
   let inc = 0;
   forecast.Location.Period.forEach((day) => {
+    const weekDay = days[new Date(day.value).getDay()];
+    const shortDay = weekDay.substr(0, 3);
     day.Rep.forEach((period) => {
       html.push(forecastItemTmpl({
-        date: day.value.substr(0, 10),
+        weekDay,
+        shortDay,
         time: `${period.$ / 60}:00`,
         weatherType: weatherTypes[placeId > 0 ? period.W : inc].description,
         weatherIcon: weatherTypes[placeId > 0 ? period.W : inc].icon,

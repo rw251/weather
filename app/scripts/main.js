@@ -7,6 +7,10 @@ module.exports = {
     Array.prototype.forEach.call(document.getElementsByClassName('mdl-navigation__link'), (elem) => {
       elem.onclick = (e) => {
         e.preventDefault();
+        Array.prototype.forEach.call(document.getElementsByClassName('mdl-navigation__link'), (x) => {
+          x.classList.remove('selected');
+        });
+        elem.classList.add('selected');
         forecast.getForPlace(elem.dataset.forecastId);
         // if obfuscator is shown then we should hide the drawer
         if (!obfuscator) [obfuscator] = document.getElementsByClassName('mdl-layout__obfuscator');
@@ -16,6 +20,6 @@ module.exports = {
         }
       };
     });
-    forecast.getForPlace(0); // shows all icons
+    forecast.getForPlace(352827); // shows all icons
   },
 };

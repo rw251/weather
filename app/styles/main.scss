@@ -60,9 +60,10 @@
   color: rgba(255, 255, 255, 0.56);
   font-weight: 500;
 }
-.demo-layout .demo-navigation .mdl-navigation__link:hover {
-  background-color: #00BCD4;
-  color: #37474F;
+.demo-layout .demo-navigation .mdl-navigation__link:hover,
+.demo-layout .demo-navigation .mdl-navigation__link.selected {
+  background-color: rgba(255, 255, 255, 0.56);
+  color: #111;
 }
 .demo-navigation .mdl-navigation__link .material-icons {
   font-size: 24px;
@@ -78,16 +79,24 @@
   float: left;
 }
 
-.forecast-item .date {
+.forecast-item .weekDay {
   width: 100px;
 }
+.forecast-item .shortDay {
+  display:none;
+}
 @media screen and (max-width: 1024px) {
-  .forecast-item .date {
-    width: 76px;
+  .forecast-item .weekDay {
+    display:none;
+  }
+  .forecast-item .shortDay {
+    width: 34px;
+    display: block;
   }
 }
 .forecast-item .time {
   width: 60px;
+  text-align: right;
 }
 @media screen and (max-width: 1024px) {
   .forecast-item .time {
@@ -96,10 +105,12 @@
 }
 .forecast-item .weatherType {
   width: 40px;
+  margin-left: 14px;
 }
 @media screen and (max-width: 1024px) {
   .forecast-item .weatherType {
     width: 30px;
+    margin-left: 5px;
   }
 }
 
@@ -157,7 +168,7 @@
 /*****************/
 .weather-icon {
   width: 40px;
-  height: 30px;
+  height: 35px;
   display: inline-block;
   vertical-align: middle;
   margin: -8px 0 0 0;
@@ -168,7 +179,7 @@
 }
 @media screen and (max-width: 1024px) {
   .weather-icon {
-    height: 20px;
+    height: 24px;
   }
 }
 
