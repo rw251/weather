@@ -1,4 +1,4 @@
-const $ = require('jquery');
+const $ = require('./myQuery');
 const forecastItemTmpl = require('../templates/forecast-item.jade');
 
 const weatherTypes = {
@@ -30,8 +30,8 @@ const weatherTypes = {
   25: { description: 'Heavy snow shower (night)', icon: 'night-heavy-snow-shower' },
   26: { description: 'Heavy snow shower (day)', icon: 'day-heavy-snow-shower' },
   27: { description: 'Heavy snow', icon: 'heavy-snow' },
-  28: { description: 'Thunder shower (night)', icon: 'night-heavy-shower' },
-  29: { description: 'Thunder shower (day)', icon: 'day-heavy-shower' },
+  28: { description: 'Thunder shower (night)', icon: 'night-thunder-shower' },
+  29: { description: 'Thunder shower (day)', icon: 'day-thunder-shower' },
   30: { description: 'Thunder', icon: 'thunder' },
 };
 
@@ -55,18 +55,14 @@ const processForecast = (forecast, placeId) => {
       inc = (inc + 1) % 31;
     });
   });
-  $('#content').html(html.join(''));
+  document.getElementById('content').innerHTML = html.join('');
 };
 
 module.exports = {
   getForPlace(placeId) {
-    $
-      .getJSON(`weather.php?place=${placeId}`)
-      .done((data) => {
-        processForecast(data.SiteRep.DV, placeId);
-      })
-      .fail((a, b, c) => {
-        console.log(a, b, c);
-      });
+    $.getJSON(`weather.php?place=${placeId}`, (err, data) => {
+      if (err) console.log(err);
+      else processForecast(data.SiteRep.DV, placeId);
+    });
   },
 };

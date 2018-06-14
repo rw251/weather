@@ -1,10 +1,10 @@
-.forecast-item(style="float:left;margin:3px")
-  //- span.date= date
-  //- span.time= time
+.forecast-item.mdl-cell.mdl-cell--12-col
+  span.date= date
+  span.time= time
   span.weatherType
     i.weather-icon(class=weatherIcon, title=weatherType)
-  //- span= feelsLike + '(' + temperature + ')'
-  //- span= 'UV(' + uv + ')'
-  //- span= windSpeed
-  //- span.wind-direction(class=windDirection) →
-  //- span= 'rain:' + probabilityRain
+  span= feelsLike + '(' + temperature + ')'
+  span= 'UV(' + uv + ')'
+  span= windSpeed
+  span.wind-direction(class=windDirection) →
+  span= 'rain:' + probabilityRain

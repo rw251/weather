@@ -1,3 +1,5 @@
+@import './material-design.scss';
+
 /**
  * Copyright 2015 Google Inc. All Rights Reserved.
  *
@@ -69,19 +71,36 @@
 }
 
 
+/******************/
 /* Wind direction */
+/******************/
 .forecast-item span {
   float: left;
 }
 
 .forecast-item .date {
-  width: 76px;
+  width: 100px;
+}
+@media screen and (max-width: 1024px) {
+  .forecast-item .date {
+    width: 76px;
+  }
 }
 .forecast-item .time {
-  width: 40px;
+  width: 60px;
+}
+@media screen and (max-width: 1024px) {
+  .forecast-item .time {
+    width: 40px;
+  }
 }
 .forecast-item .weatherType {
-  width: 30px;
+  width: 40px;
+}
+@media screen and (max-width: 1024px) {
+  .forecast-item .weatherType {
+    width: 30px;
+  }
 }
 
 .e {
@@ -133,9 +152,12 @@
   transform: rotate(157.5deg);
 }
 
+/*****************/
+/* Weather icons */
+/*****************/
 .weather-icon {
   width: 40px;
-  height: 20px;
+  height: 30px;
   display: inline-block;
   vertical-align: middle;
   margin: -8px 0 0 0;
@@ -143,6 +165,11 @@
   background-position: center center;
   background-repeat: no-repeat;
   text-indent: -9999px;
+}
+@media screen and (max-width: 1024px) {
+  .weather-icon {
+    height: 20px;
+  }
 }
 
 .day-clear {
@@ -226,11 +253,11 @@
 }
 
 .day-thunder-shower {
-  background: none, url(./images/weather.svg) no-repeat;
+  background: none, url(./images/day-thunder-shower.svg) no-repeat;
 }
 
 .night-thunder-shower {
-  background: none, url(./images/weather.svg) no-repeat;
+  background: none, url(./images/night-thunder-shower.svg) no-repeat;
 }
 .drizzle {
   background: none, url(./images/both-drizzle.svg) no-repeat;
@@ -254,9 +281,8 @@
   background: none, url(./images/both-heavy-snow.svg) no-repeat;
 }
 .thunder {
-  background: none, url(./images/weather.svg) no-repeat;
+  background: none, url(./images/both-thunder.svg) no-repeat;
 }
-
 .weather-icon {
   background-size: contain;
 }

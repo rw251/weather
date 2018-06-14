@@ -30,7 +30,6 @@
     "sass-brunch": "^2.10.4"
   },
   "dependencies": {
-    "digest-brunch": "^1.6.0",
-    "jquery": "^3.3.1"
+    "digest-brunch": "^1.6.0"
   }
 }

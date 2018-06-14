@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150" height="150" viewBox="0 0 150 150">
+	<title>Day - thunder showers</title>
+
+    <!-- sun -->
+    <g xmlns="http://www.w3.org/2000/svg" style="stroke-width:7;stroke:orange" transform="translate(-20,-20)">
+        <line x1="20" y1="75" x2="32" y2="75" transform="rotate(-20, 75, 75)"/>
+        <line x1="20" y1="75" x2="32" y2="75" transform="rotate(4, 75, 75)"/>
+        <line x1="20" y1="75" x2="32" y2="75" transform="rotate(28, 75, 75)"/>
+        <line x1="20" y1="75" x2="32" y2="75" transform="rotate(52, 75, 75)"/>
+        <line x1="20" y1="75" x2="32" y2="75" transform="rotate(76, 75, 75)"/>
+        <line x1="20" y1="75" x2="32" y2="75" transform="rotate(100, 75, 75)"/>
+        <line x1="20" y1="75" x2="32" y2="75" transform="rotate(124, 75, 75)"/>
+        <line x1="20" y1="75" x2="32" y2="75" transform="rotate(148, 75, 75)"/>
+        <circle cx="75" cy="75" r="36" fill="orange"/>
+  	</g>
+    
+    <!-- cloud - with hole for rain drop -->
+ 	  <g stroke="#666" stroke-width="4" stroke-linecap="round" fill="white" transform="translate(-25,-10),scale(1.2)">
+    	<!-- cloud - with hole for rain drop - mask -->
+      <rect x="60" y="68" width="60" height="40" stroke="white"/>
+      <rect x="53" y="89" width="60" height="21" stroke="white"/>
+        
+    	<path d="M 75 75 A 23 23, 0, 1, 0 50,110"/>
+      <path d="M 120,110 A 21 21, 0, 1, 0 115,65"/>
+      <path d="M 105 80 A 25 25, 0, 1, 0 65,65"/>
+  	</g>
+    
+    <!-- rain drop -->
+
+    <g stroke="none" fill="#00e" transform="translate(-40,-37),scale(1.3)">
+		  <path d="M 92,112 A 55,55 0 0 1  74,117 A 13,13 0, 1, 0 87,130 A 55,55 0 0 1  92,112"/>
+  	</g>
+    <g stroke="none" fill="#f79000" transform="translate(38,10),scale(0.9), rotate(10)">
+		<polygon points="82,110 67,110 82,80 97,80 87,100 102,100 67,150"/>
+	</g>
+</svg>

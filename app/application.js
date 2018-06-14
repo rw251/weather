@@ -1,9 +1,9 @@
-const $ = require('jquery');
+const $ = require('./scripts/myQuery');
 const main = require('./scripts/main');
 
 const App = {
   init: function init() {
-    $(document).ready(() => {
+    $.ready(() => {
       main.init();
     });
   },
