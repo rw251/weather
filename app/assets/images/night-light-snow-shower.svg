@@ -11,12 +11,12 @@
     <!-- cloud -->
  	  <g stroke="#666" stroke-width="4" stroke-linecap="round" fill="white" transform="translate(-25,-10),scale(1.2)">
       <!-- cloud - with hole for rain drop - mask -->
-      <rect x="70" y="68" width="50" height="40" stroke="none"/>
+      <rect x="70" y="68" width="50" height="40" stroke="white"/>
       <rect x="53" y="89" width="60" height="21" stroke="none"/>
       
-      <path d="M 75 75 A 23 23, 0, 1, 0 55,110 L 60,110"/>
-      <path d="M 110,110 115,110 A 21 21, 0, 1, 0 115,65"/>        
-      <path d="M 105 80 A 25 25, 0, 1, 0 65,65"/>
+      <path d="M 110,110 115,110 A 21 21, 0, 1, 0 115,65"/>    
+      <path d="M 105 80 A 25 25, 0, 1, 0 65,65" />
+      <path d="M 75 75 A 23 23, 0, 1, 0 55,110 L 60,110"/>   
 
   	</g>
       

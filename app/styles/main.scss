@@ -183,92 +183,36 @@
   }
 }
 
-.day-clear {
-  background: none, url(./images/day.svg) no-repeat;
-}
-
 .night-clear {
   background: none, url(./images/night.svg) no-repeat;
 }
-
-.day-partly-cloudy {
-  background: none, url(./images/day-partly-cloudy.svg) no-repeat;
+.day-clear {
+  background: none, url(./images/day.svg) no-repeat;
 }
-
 .night-partly-cloudy {
   background: none, url(./images/night-partly-cloudy.svg) no-repeat;
 }
-
-.mist,
-.fog {
-  background: none, url(./images/both-mist.svg) no-repeat;
+.day-partly-cloudy {
+  background: none, url(./images/day-partly-cloudy.svg) no-repeat;
 }
 .unknown {
   background: none, url(./images/both-unknown.svg) no-repeat;
 }
-
+.mist,
+.fog {
+  background: none, url(./images/both-mist.svg) no-repeat;
+}
 .cloudy {
   background: none, url(./images/both-cloudy.svg) no-repeat;
 }
-
 .overcast {
   background: none, url(./images/both-overcast.svg) no-repeat;
 }
-
-.day-shower {
-  background: none, url(./images/day-shower.svg) no-repeat;
-}
-
 .night-shower {
   background: none, url(./images/night-shower.svg) no-repeat;
 }
-
-.day-heavy-shower {
-  background: none, url(./images/day-heavy-shower.svg) no-repeat;
-}
-
-.night-heavy-shower {
-  background: none, url(./images/night-heavy-shower.svg) no-repeat;
-}
-
-.day-hail-shower {
-  background: none, url(./images/day-hail-shower.svg) no-repeat;
-}
-
-.night-hail-shower {
-  background: none, url(./images/night-hail-shower.svg) no-repeat;
-}
-
-.day-sleet-shower {
-  background: none, url(./images/day-sleet-shower.svg) no-repeat;
-}
-
-.night-sleet-shower {
-  background: none, url(./images/night-sleet-shower.svg) no-repeat;
-}
-
-.day-light-snow-shower {
-  background: none, url(./images/day-light-snow-shower.svg) no-repeat;
-}
-
-.night-light-snow-shower {
-  background: none, url(./images/night-light-snow-shower.svg) no-repeat;
-}
-
-.day-heavy-snow-shower {
-  background: none, url(./images/day-heavy-snow-shower.svg) no-repeat;
-}
-
-.night-heavy-snow-shower {
-  background: none, url(./images/night-heavy-snow-shower.svg) no-repeat;
-}
-
-.day-thunder-shower {
-  background: none, url(./images/day-thunder-shower.svg) no-repeat;
-}
-
-.night-thunder-shower {
-  background: none, url(./images/night-thunder-shower.svg) no-repeat;
+.day-shower {
+  background: none, url(./images/day-shower.svg) no-repeat;
 }
 .drizzle {
   background: none, url(./images/both-drizzle.svg) no-repeat;
@@ -276,24 +220,61 @@
 .light-rain {
   background: none, url(./images/both-light-rain.svg) no-repeat;
 }
+.night-heavy-shower {
+  background: none, url(./images/night-heavy-shower.svg) no-repeat;
+}
+.day-heavy-shower {
+  background: none, url(./images/day-heavy-shower.svg) no-repeat;
+}
 .heavy-rain {
   background: none, url(./images/both-heavy-rain.svg) no-repeat;
+}
+.night-sleet-shower {
+  background: none, url(./images/night-sleet-shower.svg) no-repeat;
+}
+.day-sleet-shower {
+  background: none, url(./images/day-sleet-shower.svg) no-repeat;
 }
 .sleet {
   background: none, url(./images/both-sleet.svg) no-repeat;
 }
+.night-hail-shower {
+  background: none, url(./images/night-hail-shower.svg) no-repeat;
+}
+.day-hail-shower {
+  background: none, url(./images/day-hail-shower.svg) no-repeat;
+}
 .hail {
   background: none, url(./images/both-hail.svg) no-repeat;
+}
+.night-light-snow-shower {
+  background: none, url(./images/night-light-snow-shower.svg) no-repeat;
+}
+.day-light-snow-shower {
+  background: none, url(./images/day-light-snow-shower.svg) no-repeat;
 }
 .light-snow {
   background: none, url(./images/both-light-snow.svg) no-repeat;
 }
+.night-heavy-snow-shower {
+  background: none, url(./images/night-heavy-snow-shower.svg) no-repeat;
+}
+.day-heavy-snow-shower {
+  background: none, url(./images/day-heavy-snow-shower.svg) no-repeat;
+}
 .heavy-snow {
   background: none, url(./images/both-heavy-snow.svg) no-repeat;
+}
+.night-thunder-shower {
+  background: none, url(./images/night-thunder-shower.svg) no-repeat;
+}
+.day-thunder-shower {
+  background: none, url(./images/day-thunder-shower.svg) no-repeat;
 }
 .thunder {
   background: none, url(./images/both-thunder.svg) no-repeat;
 }
+
 .weather-icon {
   background-size: contain;
 }
