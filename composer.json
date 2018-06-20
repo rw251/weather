@@ -1,0 +1,11 @@
+{
+  "require": {
+    "google/apiclient": "^2.2"
+  },
+  "config": {
+      "vendor-dir": "server/vendor"
+  },
+  "require-dev": {
+      "deployer/deployer": "^6.0"
+  }
+}

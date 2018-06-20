@@ -26,6 +26,10 @@
 
 	<link rel="stylesheet" href="DIGEST(app.css)">
 
+	<meta name="google-signin-scope" content="email">
+	<meta name="google-signin-client_id" content="314851812765-7vag9c5sb1fpd9o35rr9t8p6gj5firt9.apps.googleusercontent.com">
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -41,6 +45,8 @@
 			<div class="mdl-layout__header-row">
 				<span class="mdl-layout-title">Weather</span>
 				<div class="mdl-layout-spacer"></div>
+				<div id="profileBar"></div>
+				<div id="signinButton" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 			</div>
 		</header>
 		<div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">

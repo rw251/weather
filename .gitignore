@@ -1,4 +1,7 @@
 public/
+server/vendor/
 node_modules/
 
+
 php.ini
+composer.phar
