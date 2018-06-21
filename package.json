@@ -11,7 +11,7 @@
     "predeploy": "npm run build",
     "deploy": "npm run sync",
     "presync": "rsync -az --force --delete --progress -e 'ssh' ./public/weather/ rw251.com:~/public_html/weather --exclude=/.ssh --exclude=/.logs --exclude=/.cagefs --exclude=/.cl.selector --exclude=/.bash_history",
-    "sync": "rsync -az --force --delete --progress -e 'ssh' ./private/weather/ rw251.com:~/private/weather --exclude=/.ssh --exclude=/.logs --exclude=/.cagefs --exclude=/.cl.selector --exclude=/.bash_history"
+    "sync": "rsync -az --force --delete --progress -e 'ssh' ./private/weather/ rw251.com:~/private/weather --exclude=config.php --exclude=/.ssh --exclude=/.logs --exclude=/.cagefs --exclude=/.cl.selector --exclude=/.bash_history"
   },
   "keywords": [],
   "author": "",
