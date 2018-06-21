@@ -1,7 +1,7 @@
 public/
-server/vendor/
+private/weather/vendor/
 node_modules/
 
-
+private/weather/config.php
 php.ini
 composer.phar

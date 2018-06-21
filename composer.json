@@ -1,9 +1,10 @@
 {
   "require": {
-    "google/apiclient": "^2.2"
+    "google/apiclient": "^2.2",
+    "symfony/http-foundation": "^3.4"
   },
   "config": {
-      "vendor-dir": "server/vendor"
+      "vendor-dir": "private/weather/vendor"
   },
   "require-dev": {
       "deployer/deployer": "^6.0"

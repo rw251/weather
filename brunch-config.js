@@ -1,5 +1,6 @@
 module.exports = {
   // See http://brunch.io for documentation.
+  paths: { public: 'public/weather' },
   files: {
     javascripts: {
       joinTo: {
@@ -11,7 +12,7 @@ module.exports = {
     templates: { joinTo: 'app.js' },
   },
 
-  server: { command: 'php -S 0.0.0.0:8180 -t public -c php.ini' },
+  server: { command: 'php -S 0.0.0.0:8180 -t public/weather -c php.ini' },
 
   plugins: {
     autoReload: { port: [8081, 8082] },
