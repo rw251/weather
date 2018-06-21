@@ -50,8 +50,16 @@ self.addEventListener('fetch', function(e) {
 
 //
 self.addEventListener('push', function(e) {
+  var body;
+
+  if (e.data) {
+    body = e.data.text();
+  } else {
+    body = 'Push message no payload';
+  }
+
   var options = {
-    body: 'This notification was generated from a push!',
+    body: body,
     icon: 'images/android-chrome-192x192.png',
     vibrate: [100, 50, 100],
     data: {
@@ -68,4 +76,17 @@ self.addEventListener('push', function(e) {
   e.waitUntil(
     self.registration.showNotification('Hello world!', options)
   );
+});
+
+self.addEventListener('notificationclick', function(e) {
+  var notification = e.notification;
+  var primaryKey = notification.data.primaryKey;
+  var action = e.action;
+
+  if (action === 'close') {
+    notification.close();
+  } else {
+    clients.openWindow('https://weather.rw251.com');
+    notification.close();
+  }
 });

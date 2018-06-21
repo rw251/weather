@@ -28,8 +28,6 @@ if ($result = mysqli_query($con,'SELECT f.`id`, `name`, `url`, `date`, `value` F
     mysqli_free_result($result);
 }
 
-print_r($urls);
-
 $url_count = count($urls);
 
 $curl_arr = array();
@@ -68,8 +66,6 @@ for($i = 0; $i < $url_count; $i++)
         $newDate = new DateTime();
         $newDate = $newDate->format('Y-m-d H:i:s');
         $id = $urls[$i]['id'];
-        print_r($urls[$i]['value']);
-        print_r($newValue);
         // same value
         if($urls[$i]['value'] != $newValue) {
             $notifications[] = 'It is different!';
@@ -86,6 +82,42 @@ if(strlen($q) > 0) {
     mysqli_query($con, $sql);
 }
 
-print_r($notifications);
+
+if ($result = mysqli_query($con,'SELECT pushEndpointUrl, p256dh, auth FROM `users` WHERE `id` = 11')) {
+    /* fetch object array */
+    $row = $result->fetch_row();
+    $pushUrl =  $row[0];
+    $p256dh =  $row[1];
+    $auth =  $row[2];
+    /* free result set */
+    mysqli_free_result($result);
+}
+
+require_once __ROOT__ . '/vendor/autoload.php';
+
+use Minishlink\WebPush\WebPush;
+use Minishlink\WebPush\Subscription;
+
+$auth = array(
+    'GCM' => 'AAAASU6hZZ0:APA91bEcMjc3bOrTaPVBD5_gAoxgkVxNSQjflZD3y-hTUTzOBDVszUKOPpLt3KpGrvjo8EZnDB0QrfVf2JKy8BrauseGt7xNvhgS-wPjCZP3ZMgSr4T_YSLel4N7250hK2syNRUgR91iyA6YL7CxNhem_T0vvxRsmw',
+    'VAPID' => array(
+        'subject' => 'mailto:1234richardwilliams@gmail.com',
+        'publicKey' => "BKhC8j8oicregDpLh2k7qG8Za4Bp8CN_eEQ486lQCzEa1n2PtZ-gFiU4og7sH-qJJtneCP5I8BG3F9O2nGEPPsk",
+        'privateKey' => CONST_PUSH_PRIVATE_KEY, // in the real world, this would be in a secret file
+    ),
+);
+
+$subscription = Subscription::create([
+    'endpoint' => $pushUrl,
+    'publicKey'=> $p256dh,
+    'auth' => $auth
+]);
+$webPush = new WebPush($auth);
+$res = $webPush->sendNotification(
+    $subscription,
+    "Hello!",
+    true
+);
+
 
 ?>
