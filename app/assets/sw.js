@@ -53,24 +53,22 @@ self.addEventListener('push', function(e) {
   var body;
 
   if (e.data) {
-    body = e.data.text();
+    body = e.data.json().join('<br>');
   } else {
     body = 'Push message no payload';
   }
 
   var options = {
     body: body,
-    icon: 'images/android-chrome-192x192.png',
+    icon: 'android-chrome-192x192.png',
     vibrate: [100, 50, 100],
     data: {
       dateOfArrival: Date.now(),
       primaryKey: '2'
     },
     actions: [
-      {action: 'explore', title: 'Explore this new world',
-        icon: 'images/checkmark.png'},
-      {action: 'close', title: 'Close',
-        icon: 'images/xmark.png'},
+      {action: 'explore', title: 'Explore this new world'},
+      {action: 'close', title: 'Close'},
     ]
   };
   e.waitUntil(

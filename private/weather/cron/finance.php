@@ -68,7 +68,7 @@ for($i = 0; $i < $url_count; $i++)
         $id = $urls[$i]['id'];
         // same value
         if($urls[$i]['value'] != $newValue) {
-            $notifications[] = 'It is different!';
+            $notifications[] = $urls[$i]['name'] . ' was ' . $urls[$i]['value'] . ' is now ' . $newValue . '.';
         }
 
         $queries[] = "($id, '$newDate', $newValue)";
@@ -88,7 +88,7 @@ if ($result = mysqli_query($con,'SELECT pushEndpointUrl, p256dh, auth FROM `user
     $row = $result->fetch_row();
     $pushUrl =  $row[0];
     $p256dh =  $row[1];
-    $auth =  $row[2];
+    $authToken =  $row[2];
     /* free result set */
     mysqli_free_result($result);
 }
@@ -110,12 +110,12 @@ $auth = array(
 $subscription = Subscription::create([
     'endpoint' => $pushUrl,
     'publicKey'=> $p256dh,
-    'auth' => $auth
+    'authToken' => $authToken
 ]);
 $webPush = new WebPush($auth);
 $res = $webPush->sendNotification(
     $subscription,
-    "Hello!",
+    json_encode($notifications),
     true
 );
 
