@@ -1,9 +1,9 @@
-const currentCache = 'static-v1.0.0';
+const currentCache = 'static-v1.0.1';
 const expectedCaches = [currentCache];
 
 self.addEventListener('install', function(e) {
   self.skipWaiting();
-  
+
   e.waitUntil(
     caches.open(currentCache).then(function(cache) {
       return cache.addAll([
@@ -71,7 +71,7 @@ self.addEventListener('push', function(e) {
   var body;
 
   if (e.data) {
-    body = e.data.json().join('<br>');
+    body = e.data.json().join(', ');
   } else {
     body = 'Push message no payload';
   }
@@ -79,30 +79,18 @@ self.addEventListener('push', function(e) {
   var options = {
     body: body,
     icon: 'android-chrome-192x192.png',
-    vibrate: [100, 50, 100],
-    data: {
-      dateOfArrival: Date.now(),
-      primaryKey: '2'
-    },
-    actions: [
-      {action: 'explore', title: 'Explore this new world'},
-      {action: 'close', title: 'Close'},
-    ]
+    badge: 'mono-72x72.png',
+    vibrate: [100, 50, 100]
   };
   e.waitUntil(
-    self.registration.showNotification('Hello world!', options)
+    self.registration.showNotification('Hello!', options)
   );
 });
 
 self.addEventListener('notificationclick', function(e) {
   var notification = e.notification;
-  var primaryKey = notification.data.primaryKey;
-  var action = e.action;
-
-  if (action === 'close') {
-    notification.close();
-  } else {
-    clients.openWindow('https://weather.rw251.com');
-    notification.close();
-  }
+  // var primaryKey = notification.data.primaryKey;
+  // var action = e.action;
+  clients.openWindow('https://weather.rw251.com');
+  notification.close();
 });
