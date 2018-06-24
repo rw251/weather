@@ -43,6 +43,8 @@ do {
     curl_multi_exec($master,$running);
 } while($running > 0);
 
+$notifications = array();
+
 $sql = "INSERT INTO `financeValues` (`financeId`, `date`, `value`) VALUES ";
 for($i = 0; $i < $url_count; $i++)
 {
@@ -82,6 +84,9 @@ if(strlen($q) > 0) {
     mysqli_query($con, $sql);
 }
 
+if(sizeof($notifications) === 0) {
+    exit();
+}
 
 if ($result = mysqli_query($con,'SELECT pushEndpointUrl, p256dh, auth FROM `users` WHERE `id` = 11')) {
     /* fetch object array */

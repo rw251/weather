@@ -42,14 +42,13 @@ $subscription = Subscription::create([
 ]);
 $webPush = new WebPush($vapid);
 
-$message = array();
-$message['title'] = 'test2';
-$message['body'] = 'test3';
-$message['msg'] = 'test4';
+$messages = array();
+$messages[] = 'test2';
+$messages[] = 'test3';
     
 $res = $webPush->sendNotification(
     $subscription,
-    json_encode($message),
+    json_encode($messages),
     true
 );
 
