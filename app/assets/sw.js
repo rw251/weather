@@ -1,6 +1,11 @@
+const currentCache = 'static-v1.0.0';
+const expectedCaches = [currentCache];
+
 self.addEventListener('install', function(e) {
+  self.skipWaiting();
+  
   e.waitUntil(
-    caches.open('weather').then(function(cache) {
+    caches.open(currentCache).then(function(cache) {
       return cache.addAll([
         '',
         'index.html',
@@ -38,6 +43,19 @@ self.addEventListener('install', function(e) {
     })
   );
  });
+
+self.addEventListener('activate', event => {
+  // delete any caches that aren't in expectedCaches
+  event.waitUntil(
+    caches.keys().then(keys => Promise.all(
+      keys.map(key => {
+        if (!expectedCaches.includes(key)) {
+          return caches.delete(key);
+        }
+      })
+    ))
+  );
+});
 
  // Need to decide on a file by file basis what the caching strategy is
 self.addEventListener('fetch', function(e) {
