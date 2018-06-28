@@ -1,4 +1,4 @@
-const currentCache = 'static-v1.0.1';
+const currentCache = 'static-v1.0.2';
 const expectedCaches = [currentCache];
 
 self.addEventListener('install', function(e) {
