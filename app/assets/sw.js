@@ -80,7 +80,8 @@ self.addEventListener('push', function(e) {
     body: body,
     icon: 'android-chrome-192x192.png',
     badge: 'mono-72x72.png',
-    vibrate: [100, 50, 100]
+    vibrate: [100, 50, 100, 50, 100, 50, 500],
+    tag: 'moneyUpdate'
   };
   e.waitUntil(
     self.registration.showNotification('Hello!', options)
