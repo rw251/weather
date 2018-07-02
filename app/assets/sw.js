@@ -1,4 +1,4 @@
-const currentCache = 'static-v1.0.2';
+const currentCache = 'static-v1.0.3';
 const expectedCaches = [currentCache];
 
 self.addEventListener('install', function(e) {
@@ -80,7 +80,7 @@ self.addEventListener('push', function(e) {
     body: body,
     icon: 'android-chrome-192x192.png',
     badge: 'mono-72x72.png',
-    vibrate: [100, 50, 100, 50, 100, 50, 500],
+    vibrate: [200, 250, 200, 250, 200, 250, 500],
     tag: 'moneyUpdate'
   };
   e.waitUntil(
