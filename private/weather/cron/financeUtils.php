@@ -87,6 +87,7 @@ function getNewFinancialData($urls) {
 
             $data[] = array(
                 "id" => $urls[$i]['id'],
+                "name" => $urls[$i]['name'],
                 "oldPrice" => $urls[$i]['value'],
                 "oldDate" => $urls[$i]['date'],
                 "newPrice" => $price,
