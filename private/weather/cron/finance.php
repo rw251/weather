@@ -17,7 +17,7 @@ for($i=0; $i < count($data); $i++) {
     $changeToday = $data[$i]['changeToday'] == '?' ? "NULL" : $data[$i]['changeToday'];
     $changeYear = $data[$i]['changeYear'] == '?' ? "NULL" : $data[$i]['changeYear'];
     if($data[$i]['oldPrice']!=$data[$i]['newPrice'] && (date('H')==$oclock08 || date('H')==$oclock12 || date('H')==$oclock17  )) {
-        $notifications[] = $data[$i]['name'] . ' was ' . $data[$i]['oldPrice'] . ' is now ' . $data[$i]['newPrice'] . '.' . date('H') . '(' . $changeToday . '%)';
+        $notifications[] = $data[$i]['name'] . ' was ' . $data[$i]['oldPrice'] . ' is now ' . $data[$i]['newPrice'] . ' (' . $changeToday . '%).';
     } else if(date('H')==$oclock20) {
         $notifications[] = $data[$i]['name'] . ' day change is ' . $changeToday . '%.';
     }
