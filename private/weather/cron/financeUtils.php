@@ -72,6 +72,10 @@ function getNewFinancialData($urls) {
                     if(preg_match("/(?:1|one).*year/i", $title)) {
                         $oneYearChange = preg_replace("/^[^\d]*([\d.]+)%/", "$1", $value);
                         if(!is_numeric($oneYearChange)) $oneYearChange = '?';
+                    } else if(preg_match("/gbp/i", $title)) {
+                        $price = str_replace("," ,"", $value);
+                        if(!is_numeric($price)) $price = '?';
+                        else $price = $price * 100;
                     } else if(preg_match("/price/i", $title)) {
                         $price = str_replace("," ,"", $value);
                         if(!is_numeric($price)) $price = '?';
