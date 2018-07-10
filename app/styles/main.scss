@@ -80,6 +80,44 @@
   cursor: pointer;
 }
 
+.finance-item span {
+  float: left;
+}
+
+.finance-item .name {
+  overflow: hidden;
+  text-overflow: clip;
+  width: 300px;
+}
+
+.finance-item .value {
+  margin-left: 10px;
+  width: 100px;
+}
+
+.finance-item .dayChange {
+  margin-left: 10px;
+}
+
+.finance-item .name a {
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 1024px) {
+  .finance-item .name {
+    width: 100%;
+  }
+
+  .finance-item .value {
+    margin-left: 0;
+    width: auto;
+  }
+  
+  .finance-item .dayChange {
+    margin-left: 5px;
+  }
+}
+
 /******************/
 /* Wind direction */
 /******************/
