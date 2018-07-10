@@ -103,6 +103,14 @@
   white-space: nowrap;
 }
 
+.finance-item .up {
+  color: green;
+}
+
+.finance-item .down {
+  color: red;
+}
+
 @media screen and (max-width: 1024px) {
   .finance-item .name {
     width: 100%;

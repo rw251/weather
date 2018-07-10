@@ -44,5 +44,6 @@ module.exports = {
     });
 
     forecast.getForPlace(352827); // shows all icons
+    finance.preload();
   },
 };
