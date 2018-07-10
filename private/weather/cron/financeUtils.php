@@ -61,7 +61,13 @@ function getNewFinancialData($urls) {
             $oneYearChange = '?';
             $price = '?';
             $todayChange = '?';
-            
+
+            $disclaimer = $ft_xpath->query("//*[contains(concat(' ', @class, ' '), ' mod-tearsheet-overview__quote ')]/div[1]");
+
+            $today = new DateTime();
+            $today = $today->format('M d');
+            $isUpdatedToday = $today == preg_replace("/^.+as of ([^ ]+ [^ ]+).*/", "$1", $disclaimer[0]->textContent);
+
             for($j = 1; $j < 5; $j++) {
                 $title = $ft_xpath->query("//*[contains(concat(' ', @class, ' '), ' mod-tearsheet-overview__quote__bar ')]/li[$j]/span[1]");
                 $value = $ft_xpath->query("//*[contains(concat(' ', @class, ' '), ' mod-tearsheet-overview__quote__bar ')]/li[$j]/span[2]");
@@ -96,6 +102,7 @@ function getNewFinancialData($urls) {
                 "oldDate" => $urls[$i]['date'],
                 "newPrice" => $price,
                 "newDate" => $newDate,
+                "isUpdatedToday" => $isUpdatedToday,
                 "changeToday" => $todayChange,
                 "changeYear" => $oneYearChange
             );
