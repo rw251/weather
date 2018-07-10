@@ -19,7 +19,7 @@ if (mysqli_connect_errno()) {
 
 $user = $_SESSION['user'];
 
-if ($result = mysqli_query($con,"SELECT f.name, f.url, fv.value, fv.dayChange FROM `finance` f INNER JOIN `users` u on u.id = f.userId INNER JOIN `financeValues` fv on fv.financeId = f.id WHERE googleSub='$user'")) {
+if ($result = mysqli_query($con,"SELECT f.name, f.url, fv.value, fv.dayChange, fv.updatedToday FROM `finance` f INNER JOIN `users` u on u.id = f.userId INNER JOIN `financeValues` fv on fv.financeId = f.id WHERE googleSub='$user'")) {
   /* fetch object array */
   $values = array();
   while ($row = $result->fetch_row()) {
@@ -27,7 +27,8 @@ if ($result = mysqli_query($con,"SELECT f.name, f.url, fv.value, fv.dayChange FR
           "name" => $row[0], 
           "url" => $row[1], 
           "value" => $row[2], 
-          "dayChange" => $row[3]
+          "dayChange" => $row[3], 
+          "updatedToday" => $row[4]
       );
   }
 
