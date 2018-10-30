@@ -96,37 +96,42 @@
 				.then(function(reg) {
 					console.log('Service Worker Registered!', reg);
 
-					reg.pushManager.getSubscription()
-						.then(function(sub) {
-							if (sub === null) {
-								// Register
-								const applicationServerPublicKey = 'BKhC8j8oicregDpLh2k7qG8Za4Bp8CN_eEQ486lQCzEa1n2PtZ-gFiU4og7sH-qJJtneCP5I8BG3F9O2nGEPPsk';
-								const applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
-								reg.pushManager.subscribe({
-									userVisibleOnly: true,
-									applicationServerKey
-								}).then(function(sub) {
+					var isMobile = !!navigator.userAgent.match(/iphone|android|blackberry/ig) || false;
+
+					if(isMobile) {
+
+						reg.pushManager.getSubscription()
+							.then(function(sub) {
+								if (sub === null) {
+									// Register
+									const applicationServerPublicKey = 'BKhC8j8oicregDpLh2k7qG8Za4Bp8CN_eEQ486lQCzEa1n2PtZ-gFiU4og7sH-qJJtneCP5I8BG3F9O2nGEPPsk';
+									const applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
+									reg.pushManager.subscribe({
+										userVisibleOnly: true,
+										applicationServerKey
+									}).then(function(sub) {
+										console.log('Subscription object: ', JSON.stringify(sub));
+										var request = new XMLHttpRequest();
+										request.open('POST', 'updatePushEndpoint.php', true);
+										request.setRequestHeader('Content-Type', "application/json");
+										request.send(JSON.stringify(sub));
+									}).catch(function(e) {
+										if (Notification.permission === 'denied') {
+											console.warn('Permission for notifications was denied');
+										} else {
+											console.error('Unable to subscribe to push', e);
+										}
+									});
+								} else {
+									// We have a subscription, update the database
 									console.log('Subscription object: ', JSON.stringify(sub));
 									var request = new XMLHttpRequest();
 									request.open('POST', 'updatePushEndpoint.php', true);
 									request.setRequestHeader('Content-Type', "application/json");
 									request.send(JSON.stringify(sub));
-								}).catch(function(e) {
-									if (Notification.permission === 'denied') {
-										console.warn('Permission for notifications was denied');
-									} else {
-										console.error('Unable to subscribe to push', e);
-									}
-								});
-							} else {
-								// We have a subscription, update the database
-								console.log('Subscription object: ', JSON.stringify(sub));
-								var request = new XMLHttpRequest();
-								request.open('POST', 'updatePushEndpoint.php', true);
-								request.setRequestHeader('Content-Type', "application/json");
-								request.send(JSON.stringify(sub));
-							}
-						});
+								}
+							});
+						}
 				})
 				.catch(function(err) {
 					console.log('Service Worker registration failed: ', err);
