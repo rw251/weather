@@ -3,9 +3,11 @@ const finance = require('./finance');
 
 module.exports = {
   init() {
-    Notification.requestPermission((status) => {
-      console.log('Notification permission status:', status);
-    });
+    if (!!navigator.userAgent.match(/iphone|android|blackberry/ig) || false) {
+      Notification.requestPermission((status) => {
+        console.log('Notification permission status:', status);
+      });
+    }
 
     let layout = document.querySelector('.mdl-layout');
     let obfuscator = document.getElementsByClassName('mdl-layout__obfuscator')[0];

@@ -96,9 +96,7 @@
 				.then(function(reg) {
 					console.log('Service Worker Registered!', reg);
 
-					var isMobile = !!navigator.userAgent.match(/iphone|android|blackberry/ig) || false;
-
-					if(isMobile) {
+					if(!!navigator.userAgent.match(/iphone|android|blackberry/ig) || false;) {
 
 						reg.pushManager.getSubscription()
 							.then(function(sub) {
